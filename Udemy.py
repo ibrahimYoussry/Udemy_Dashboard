@@ -72,8 +72,8 @@ fig.update_traces(
 st.plotly_chart(fig, use_container_width=True)
 st.subheader('Lec & Duration')
 fig = px.scatter(data_frame= df, 
-                x= 'num_lectures',
-                y = 'content_duration'
+                x= 'content_duration',
+                y = ' num_lectures'
                 )
 st.plotly_chart(fig , use_container_width=True)
 st.write('_______________________________________________________________________________________')
