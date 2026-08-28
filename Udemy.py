@@ -70,6 +70,12 @@ fig.update_traces(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+st.subheader('Lec & Duration')
+fig = px.scatter(data_frame= df, 
+                x= 'num_lectures',
+                y = 'content_duration'
+                )
+st.plotly_chart(fig , use_container_width=True)
 st.write('_______________________________________________________________________________________')
 st.header('All chart' , text_alignment='center')
 
