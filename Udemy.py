@@ -44,9 +44,15 @@ fig = px.scatter(data_frame= df,
                 size= num_fil, hover_name='subject')
 st.plotly_chart(fig , use_container_width=True)
 st.markdown("**Summary Insight**:   *A large number of students enrolled in free courses*......  **⬆** ")
-st.text('paid by subscribe')
-fig = px.pie(data_frame= df , names='is_paid', values='num_subscribers' , )
-st.plotly_chart(fig , use_container_width=True)
+paid_free = df['is_paid'].map({True: 'Paid', False: 'Free'}).value_counts().reset_index()
+paid_free.columns = ['Type', 'Count']
+fig = px.pie(
+    paid_free,
+    names='Type',
+    values='Count',
+    title='Paid vs Free Courses'
+)
+st.plotly_chart(fig, use_container_width=True)
 st.write('_______________________________________________________________________________________')
 st.header('All chart' , text_alignment='center')
 
