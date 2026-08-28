@@ -34,7 +34,7 @@ cl1 ,cl2 , cl3, cl4 = st.columns(4)
 cl1.metric('MaxPrice ' , df['price'].max() ,)
 cl2.metric('TotalSubscribes' , df['num_subscribers'].sum())
 cl3.metric('TotalReview ' , df['num_reviews'].sum())
-cl4.metric('MaxLec' , df['num_lectures'].max())
+cl4.metric('TotaLLec' , df['num_lectures'].sum())
 st.write('_______________________________________________________________________________________')
 st.subheader('Price & Sub')
 fig = px.scatter(data_frame= df, 
